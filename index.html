@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Virus Infection Simulation ~ Dileep Miriyala(దిలీపు మిరియాల)</title>
+    <script type="text/javascript" src="p5.min.js"></script>
+    <link href="index.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Virus Infection Simulation</h2>
+    <div class="control-panel">
+
+        <label class="title">Settings</label>
+        <div>
+            <label>Population :</label>
+            <input type="range" id="population" min="100" max="1000" value="200" step="100" />
+            <label class="number" id="lbl_population"></label>
+        </div>
+        <div>
+            <label>Safe Distance:</label>
+            <input type="range" id="safe_distance" min="20" max="400" value="30" step="10" />
+            <label class="number" id="lbl_safe_distance"></label>
+        </div>
+        <div>
+            <label title="Amount of distance a person can travel in a day.">Coverage :</label>
+            <input type="range" id="coverage" min="0" max="100" value="20" step="10"
+                   title="Amount of distance a person can travel in a day." />
+            <label class="number" id="lbl_coverage"></label>
+        </div>
+        <hr />
+        <div>
+            <label>Seed Infections :</label>
+            <input type="range" id="seed_infections" min="0" max="10" value="1" step="1" />
+            <label class="number" id="lbl_seed_infections"></label>
+        </div>
+
+        <div>
+            <label>Incubation Time :</label>
+            <input type="range" id="incubation_time" min="0" max="14" value="7" step="1" />
+            <label class="number" id="lbl_incubation_time"></label>
+        </div>
+
+        <div>
+            <label>Suffering Time :</label>
+            <input type="range" id="suffering_time" min="7" max="49" value="21" step="7" />
+            <label class="number" id="lbl_suffering_time"></label>
+        </div>
+        <hr />
+        <div>
+            <label>Recovery Immunity :</label>
+            <input type="range" id="recovery_threshold" min="1" max="100" value="70" step="1" />
+            <label class="number" id="lbl_recovery_threshold"></label>
+        </div>
+        <div>
+            <label>Reinfection Immunity :</label>
+            <input type="checkbox" id="reinfect" checked />
+        </div>
+        <hr />
+        <div>
+            <label>Quarentine Type :</label>
+            <input type="radio" name="qType" id="rdNone" value="0" /><label for="rdNone">None</label>
+            <input type="radio" name="qType" id="rdInfected" value="1" checked="checked" /><label for="rdInfected">Infected</label>
+            <input type="radio" name="qType" id="rdCommunity" value="2" /><label for="rdCommunity">Community</label>
+            <input type="radio" name="qType" id="rdSelf" value="3" /><label for="rdSelf">Self</label>
+        </div>
+
+        <div id="qZone">
+            <label title="Negative Value means never. 0 means immediate. 1 means afrer 1 day and so on.">
+                Quarentine After :
+            </label>
+            <input type="range" id="quarentine" min="0" max="49" value="7" step="1"
+                   title="Zero means immediate. 1 means afrer a day and so on." />
+            <label class="number" id="lbl_quarentine"></label>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <input type="button" id="btnSubmit" value="Run" />
+            <label class="message" id="lbl_message"></label>
+        </div>
+    </div>
+
+    <div id="canvas" class="canvas"></div>
+
+    <div class="footer"><span class="content">~ Dileep Miriyala(దిలీపు మిరియాల)</span></div>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
